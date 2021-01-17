@@ -1,20 +1,21 @@
+import java.util.*
+
 // O(n) solution to check if str1 is permutation of str2
-fun checkPerm(str1: String, str2: String): Boolean {
-    if (str1.length != str2.length) return false
-    val str1Map = strToCountHashMap(str1)
-    val str2Map = strToCountHashMap(str2)
-    return str1Map == str2Map
+// clarify is the permutation comparison is case sensitive, and if white space counts - answers: yes to both
+fun String.checkPerm(t: String): Boolean {
+	// permutation would imply having the same chrs in different orders so can sort and compare
+	return sort(this) == sort(t)
 }
 
-fun strToCountHashMap(str: String): HashMap<Char, Int> {
-    val map: HashMap<Char, Int> = HashMap()
-    str.forEach { map[it] = (map[it] ?: 0) + 1 }
-    return map
+fun sort(s: String): String {
+	val content = s.toCharArray()
+	Arrays.sort(content)
+	return String(content)
 }
 
-checkPerm("", "")
-! checkPerm("a", "aa")
-checkPerm("pedram", "adepmr")
-! checkPerm("pEdram", "adepmr")
-! checkPerm("pedram", "pedaam")
-! checkPerm("pedram", "pedram ")
+"".checkPerm("")
+! "a".checkPerm("aa")
+"pedram".checkPerm("adepmr")
+! "pEdram".checkPerm("adepmr")
+! "pedram".checkPerm("pedaam")
+! "pedram".checkPerm("pedram ")
