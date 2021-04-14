@@ -1,3 +1,5 @@
+package ArraysAndStrings
+
 // given MxN matrix, for all 0 elements, set its entire column and row to 0
 fun Array<IntArray>.setZeros(): Array<IntArray> {
     var rowHasZero = false

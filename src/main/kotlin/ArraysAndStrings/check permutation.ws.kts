@@ -1,3 +1,5 @@
+package ArraysAndStrings
+
 import java.util.*
 
 // O(n) solution to check if str1 is permutation of str2

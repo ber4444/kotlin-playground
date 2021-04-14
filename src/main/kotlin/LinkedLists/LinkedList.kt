@@ -1,6 +1,8 @@
+package LinkedLists
+
 class Node<T>(var data: T){
     var next: Node<T>? = null
-    var previous:Node<T>? = null
+    var previous: Node<T>? = null
 
     fun getList(): String {
         return if (next != null) {

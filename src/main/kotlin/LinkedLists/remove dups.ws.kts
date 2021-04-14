@@ -1,3 +1,5 @@
+package LinkedLists
+
 import java.util.HashSet
 
 // given an unsorted linked list, remove dupes

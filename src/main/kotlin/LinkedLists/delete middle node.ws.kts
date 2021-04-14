@@ -1,3 +1,5 @@
+package LinkedLists
+
 // given access to a single node only in the middle of a singly linked list (no access to head), delete it
 fun Node<Int>?.deleteNode(): Boolean {
     if (this == null || this.next == null) {

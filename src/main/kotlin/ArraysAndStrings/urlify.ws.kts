@@ -1,3 +1,5 @@
+package ArraysAndStrings
+
 // O(n) time O(1) space solution to replace " " with "%20" in place
 // trueLength means the number of chrs from the input that we want to consider
 // use a CharArray because String is immutable so this way we can do it in one pass

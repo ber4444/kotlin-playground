@@ -1,3 +1,5 @@
+package ArraysAndStrings
+
 import kotlin.math.abs
 
 // solution to check if the difference between 2 strings is 1 character (insert/remove/replace)

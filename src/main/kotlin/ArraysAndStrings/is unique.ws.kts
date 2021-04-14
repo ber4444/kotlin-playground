@@ -1,3 +1,5 @@
+package ArraysAndStrings
+
 // O(n) solution to check if str has all unique characters
 fun String.isUnique() = this.length == this.toSet().size
 

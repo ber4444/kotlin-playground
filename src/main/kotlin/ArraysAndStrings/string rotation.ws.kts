@@ -1,3 +1,5 @@
+package ArraysAndStrings
+
 // check if a is substring b with rotation
 fun String.isRotation(s: String): Boolean {
 	if (this.length == s.length && this.isNotEmpty()) {

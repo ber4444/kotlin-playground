@@ -1,3 +1,5 @@
+package ArraysAndStrings
+
 // compress a str (composed of a-z, A-Z chrs only) using the count of repeated chrs
 fun String.compress(): String {
 
