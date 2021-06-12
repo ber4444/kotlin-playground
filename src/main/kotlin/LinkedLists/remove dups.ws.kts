@@ -2,6 +2,19 @@ package LinkedLists
 
 import java.util.HashSet
 
+class Node<T>(var data: T){
+	var next: Node<T>? = null
+	var previous: Node<T>? = null
+
+	fun getList(): String {
+		return if (next != null) {
+			data.toString() + "->" + next?.getList()
+		} else {
+			data.toString()
+		}
+	}
+}
+
 // given an unsorted linked list, remove dupes
 fun Node<Int>.deleteDups() {
 	var n: Node<Int>? = this
