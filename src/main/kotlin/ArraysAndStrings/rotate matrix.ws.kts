@@ -1,6 +1,6 @@
 package ArraysAndStrings
 
-// rotate NxN matrix by 90 degrees, elements are 4 bytes each
+// O(n^2) solution for: rotate NxN matrix by 90 degrees, elements are 4 bytes each
 fun Array<IntArray>.rotate(): Array<IntArray> {
 	if (this.isEmpty() || this.size != this[0].size) return this // Not a square
 	val n = this.size

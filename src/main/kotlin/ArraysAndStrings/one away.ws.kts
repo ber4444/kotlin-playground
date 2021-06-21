@@ -2,7 +2,7 @@ package ArraysAndStrings
 
 import kotlin.math.abs
 
-// solution to check if the difference between 2 strings is 1 character (insert/remove/replace)
+// O(n) time solution to check if the difference between 2 strings is 1 character (insert/remove/replace)
 fun String.oneAway(str: String): Boolean {
     if (abs(this.length - str.length) > 1)
         return false

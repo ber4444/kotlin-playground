@@ -2,9 +2,9 @@ package LinkedLists
 
 import java.util.HashSet
 
-class Node<T>(var data: T){
-	var next: Node<T>? = null
-	var previous: Node<T>? = null
+class Node(var data: Int){
+	var next: Node? = null
+	var previous: Node? = null
 
 	fun getList(): String {
 		return if (next != null) {
@@ -15,11 +15,11 @@ class Node<T>(var data: T){
 	}
 }
 
-// given an unsorted linked list, remove dupes
-fun Node<Int>.deleteDups() {
-	var n: Node<Int>? = this
+// O(N) solution for: given an unsorted linked list, remove dupes
+fun Node.deleteDups() {
+	var n: Node? = this
 	val set = HashSet<Int>()
-	var previous: Node<Int>? = null
+	var previous: Node? = null
 	while (n != null) {
 		if (set.contains(n.data) && previous != null) {
 			previous.next = n.next
@@ -31,16 +31,21 @@ fun Node<Int>.deleteDups() {
 	}
 }
 
-var first = Node(0)
-val head = first
-var second = first
-for (i in 1..8) {
-	second = Node(i % 2)
-	first.next = second
-	second.previous = first
-	first = second
+fun init(): Node {
+	var first = Node(0)
+	val head = first
+	var second: Node
+	for (i in 1..8) {
+		second = Node(i % 2)
+		first.next = second
+		second.previous = first
+		first = second
+	}
+	return head
 }
 
+val head = init()
 println(head.getList())
 head.deleteDups()
 println(head.getList())
+

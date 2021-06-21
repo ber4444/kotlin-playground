@@ -31,9 +31,9 @@ fun String.compress(): String {
 "aabccccccccdeFFFFggggggghi".compress() == "a2b1c8d1e1F4g7h1i1"
 "aaaaaaaaaa".compress() == "a10"
 "pedram".compress() == "pedram"
-try {
+println(try {
     "aa/bc".compress()
     false
 } catch (e: Exception) {
     true
-}
+})
