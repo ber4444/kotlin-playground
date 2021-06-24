@@ -5,8 +5,9 @@ package Maps
 // in maps, null keys may be allowed, but duplicate keys are not allowed
 // the objects used as keys should implement equals() and hashCode(), and ideally keys are immutable types
 // hashing will convert the key to an Int. Insert, get, etc is O(1)
-// if multiple keys have the same hash code, we have a hash collision... can resolve that by mapping it to a key-value list (chaining)
-
+// if multiple keys have the same hash code, we have a hash collision... can resolve that by
+// mapping it to a key-value list (chaining) - basically the hashmap becomes an array of linked lists
+// note: HashMap is preferred over Hashtable when synchronization is not needed
 private class Node<K, V>(
     val hash: Int,
     val key: K,

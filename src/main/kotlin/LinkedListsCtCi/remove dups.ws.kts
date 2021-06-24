@@ -1,4 +1,4 @@
-package LinkedLists
+package LinkedListsCtCi
 
 import java.util.HashSet
 
@@ -15,7 +15,9 @@ class Node(var data: Int){
 	}
 }
 
-// O(N) solution for: given an unsorted linked list, remove dupes
+// O(N) time solution for: given an unsorted linked list, remove dupes
+// (if no HashSet is allowed, we can do it in O(n^2) time only by using 2 pointers -
+//   `curr` which iterates through the list, and `runner` which checks subsequent nodes for dupes)
 fun Node.deleteDups() {
 	var n: Node? = this
 	val set = HashSet<Int>()

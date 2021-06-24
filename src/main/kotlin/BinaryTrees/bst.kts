@@ -1,7 +1,10 @@
 package BinaryTrees
 
 // a BST is a special binary tree where elements on the left are smaller than ones on the right
-// (node: Arrays.binarySearch is in the standard library)
+// (node: Arrays.binarySearch is in the standard library - only applies to sorted arrays, and is faster
+// than linear search - O(log n))
+// finding and insertion in a balanced bst is also O(log n)
+// in the kotlin library, we also have list.binarySearch(item)
 /*
   +------ 5
   |       |
@@ -51,7 +54,7 @@ fun _validate(tree: Node?, min: Int, max: Int): Boolean {
         return _validate(node.left, min, node.value-1) && _validate(node.right, node.value+1, max)
     } ?: return true
 }
-val tree = Node(60) // root
+val tree = Node(60) // root - ideally the middle of the array if that is sorted so that the tree will end up being balanced
 val v = arrayOf(30, 33, 40, 20, 30, 125, 70, 90, 6)
 for (e in v) tree.insert(e)
 println(tree.find(33) != null)

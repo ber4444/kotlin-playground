@@ -1,4 +1,4 @@
-package ArraysAndStrings
+package ArraysAndStringsCtCi
 
 import kotlin.math.abs
 

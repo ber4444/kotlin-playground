@@ -26,6 +26,7 @@ which is stored in memory as:
 A -> [B, E]
 B -> [A]
 E -> [A]
+(node: if it's an undirected graph, we simply store all connections twice: a->b and b->a)
  */
 val graph = Graph<Char>()
 graph.addEdge('E', 'A')

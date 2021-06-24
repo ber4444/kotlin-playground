@@ -1,4 +1,4 @@
-package ArraysAndStrings
+package ArraysAndStringsCtCi
 
 // compress a str (composed of a-z, A-Z chrs only) using the count of repeated chrs
 fun String.compress(): String {
@@ -6,21 +6,18 @@ fun String.compress(): String {
     if (!this.matches(Regex("[a-zA-Z]+")))
         throw IllegalArgumentException()
 
-    var idx = 0
+    var i = 0
     var count: Int
-    var currentChar: Char
     val sb = StringBuilder()
-    while (idx < this.length) {
-        currentChar = this[idx]
-
+    while (i < this.length) {
         count = 1
-        while (idx != this.length - 1 && this[idx + 1] == currentChar) {
-            idx++
+        while (i != this.length - 1 && this[i + 1] == this[i]) {
+            i++
             count++
         }
 
-        sb.append(currentChar, count)
-        idx++
+        sb.append(this[i], count)
+        i++
     }
 
     val result = sb.toString()

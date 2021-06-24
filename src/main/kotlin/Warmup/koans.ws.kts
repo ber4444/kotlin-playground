@@ -127,7 +127,7 @@ strings.sortedBy { it.length } ==
 strings.sortedDescending() ==
         listOf("cc", "bbb", "a")
 
-val nums = listOf(1, -1, 2)
+val nums = listOf(1, -1, 2) // or setOf(...)
 nums.filter { it > 0 } == listOf(1, 2)
 nums.map { it * it } == listOf(1, 1, 4)
 
@@ -166,5 +166,26 @@ listOf("abc", "12").flatMap { it.toList() } == listOf('a', 'b', 'c', '1', '2')
 val isOdd: Int.() -> Boolean = { this % 2 != 0 }
 42.isOdd()
 
+val names = listOf("Chandra", "Rivu", "Nick", "Ahmed")
+val ages = listOf(30, 27, 35, 19)
+println(names.zip(ages))
 
+fun main() {
+    var myFunc: (Int) -> Int
+    myFunc = { it * 2 }
+    myFunc = { it / 2 }
+    println("10 * 2 ${myFunc(10)}")
+}
 
+// lambdas are similar to callbacks:
+//Interfaces used as callbacks can have multiple abstract methods, while functional interfaces can only have a single abstract method.
+fun highOrder(lambda: () -> Unit) {
+    println("Before anotherFunc()")
+    lambda()
+    println("After anotherFunc()")
+}
+fun main() {
+    highOrder {
+        println("anotherFunc()")
+    }
+}

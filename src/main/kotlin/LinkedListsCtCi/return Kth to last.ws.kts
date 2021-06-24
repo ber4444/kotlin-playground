@@ -1,8 +1,7 @@
-package LinkedLists
+package LinkedListsCtCi
 
 class Node<T>(var data: T){
     var next: Node<T>? = null
-    var previous: Node<T>? = null
 }
 
 class LinkedList<T> {
@@ -12,7 +11,6 @@ class LinkedList<T> {
         val newNode = Node(value)
         val lastNode = this.last()
         if (lastNode != null) {
-            newNode.previous = lastNode
             lastNode.next = newNode
         } else {
             head = newNode
@@ -32,9 +30,11 @@ class LinkedList<T> {
 
 // O(n) time, O(1) space solution for:
 // find the Nth to last element of a singly linked list (size of list unknown)
+// here k=1 is last element, k=2 is 2nd last, etc
+// (if the size of the list is known, just iterate to the element at length-k position)
 fun Node<Int>.nthToLast(k: Int): Node<Int>? {
-    var p1: Node<Int>? = this
-    var p2: Node<Int>? = this
+    var p1: Node<Int>? = this // will remain k notes apart from p2
+    var p2: Node<Int>? = this // will denote the beginning of the list
 
     /* Move p1 k nodes into the list.*/
     for (i in 0 until k) {

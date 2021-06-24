@@ -1,4 +1,4 @@
-package ArraysAndStrings
+package ArraysAndStringsCtCi
 
 // O(n^2) solution for: rotate NxN matrix by 90 degrees, elements are 4 bytes each
 fun Array<IntArray>.rotate(): Array<IntArray> {
@@ -9,6 +9,9 @@ fun Array<IntArray>.rotate(): Array<IntArray> {
 		for (i in layer until last) {
 			val offset = i - layer
 			val top = this[layer][i] // save top
+
+			// perform 4-way edge swap index by index (or we could copy the whole edge to a temp array
+			// but would increase the space complexity that way):
 
 			// left -> top
 			this[layer][i] = this[last - offset][layer]

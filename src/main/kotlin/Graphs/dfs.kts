@@ -12,7 +12,7 @@ class Graph<T> {
     }
 }
 
-// this one uses a Stack
+// this one uses a Stack (or can be written recursively)
 // almost the same as BF traversal except that here a Queue is used instead of a Stack
 // (the Deque interface supports both Stack and Queue data types)
 fun <T> dfs(graph: Graph<T>, startNode: T): String {
@@ -46,4 +46,6 @@ graph.addEdge('E', 'A')
 graph.addEdge('A', 'B')
 graph.addEdge('A', 'C')
 graph.addEdge('C', 'D')
+// start with an arbitrary node, and explore each branch completely ("depth first") before moving on to a new branch
+// DFS is simpler than BFS and preferred when we want to visit every node
 println(dfs(graph, 'E'))

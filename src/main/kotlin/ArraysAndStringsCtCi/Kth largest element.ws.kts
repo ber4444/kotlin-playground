@@ -1,10 +1,8 @@
-package ArraysAndStrings
-
-import java.util.*
+package ArraysAndStringsCtCi
 
 // assume the array is unsorted
 fun IntArray.findKthLargest(k: Int): Int {
-    Arrays.sort(this)
+    this.sort()
     return this[this.size-k]
 }
 

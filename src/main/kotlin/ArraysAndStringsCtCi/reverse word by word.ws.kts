@@ -1,4 +1,4 @@
-package ArraysAndStrings
+package ArraysAndStringsCtCi
 
 fun String.reverseWords() = this.split(" ").reversed().joinToString(" ")
 

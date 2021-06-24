@@ -1,4 +1,4 @@
-package StacksAndQueues
+package StacksAndQueuesCtCi
 
 class Queue<E> {
     private val minCapacityIncrement = 12

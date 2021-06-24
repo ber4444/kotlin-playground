@@ -1,8 +1,7 @@
-package LinkedLists
+package LinkedListsCtCi
 
 class Node<T>(var data: T){
 	var next: Node<T>? = null
-	var previous: Node<T>? = null
 
 	fun getList(): String {
 		return if (next != null) {
@@ -20,7 +19,6 @@ class LinkedList<T> {
 		val newNode = Node(value)
 		val lastNode = this.last()
 		if (lastNode != null) {
-			newNode.previous = lastNode
 			lastNode.next = newNode
 		} else {
 			head = newNode

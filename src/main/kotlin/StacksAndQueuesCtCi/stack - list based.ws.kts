@@ -1,4 +1,4 @@
-package StacksAndQueues
+package StacksAndQueuesCtCi
 
 class Stack<E> {
     private var size = 0

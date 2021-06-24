@@ -1,7 +1,10 @@
-package ArraysAndStrings
+package ArraysAndStringsCtCi
 
 // given MxN matrix, for all 0 elements, set its entire column and row to 0
+// the O(MN) space solution is straightforward, this one is O(1) space:
+// (the 1st col and 1st row is used to keep track of all rows and cols with 0's)
 fun Array<IntArray>.setZeros(): Array<IntArray> {
+    // store whether or not there are 0's in the first col and first row
     var rowHasZero = false
     var colHasZero = false
 

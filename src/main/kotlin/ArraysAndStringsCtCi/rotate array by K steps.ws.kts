@@ -1,4 +1,4 @@
-package ArraysAndStrings
+package ArraysAndStringsCtCi
 
 // assume that n is non-negative
 fun IntArray.rotateBy(rotateBy: Int): IntArray {

@@ -4,7 +4,7 @@ import java.util.PriorityQueue
 
 // a min heap is a complete binary tree; that is, all levels of the tree, except possibly the last one (deepest) are
 // fully filled, and, if the last level of the tree is not complete, the nodes of that level are filled from left to right.
-//the value in each internal node is smaller than or equal to the values in the children of that node.
+// In a min heap, the value in each parent node is smaller than or equal to the values in the children of that node.
 // stored as an array with root being arr[0], and any given node is at arr[i], parent is arr[(i-1)/2]
 // left child is arr[(2*i)+1], right child is arr[(2*i)+2]
 // arr[0] is the minimum. Inserting/removing a value is O(log n) time
@@ -21,6 +21,7 @@ class Heap(size: Int, seed: Int) {
     private fun parent(i: Int) = i shr 1
     private fun swap(i: Int, j: Int) { array[i] = array[j].also { array[j] = array[i] } }
 
+    // insert to bottom right, then bubble up to the correct position
     operator fun plusAssign(value: Int) {
         require(heapSize < array.size - 1) { error("At max size") }
 

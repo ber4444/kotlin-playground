@@ -1,10 +1,11 @@
 package Sorting
 
-// (note: Arrays.sort is in the standard library)
+// (note: Arrays.sort is in the standard library, and Lists have a .sorted() extension - or can call sort() on a mutable list)
 //  merge sort - O(n log n) for all cases (which is slower than O(n))
 // down side is that merging the arrays needs O(n) space
-// node: Collections.sort uses merge sort, while Arrays.sort uses quick sort (the latter is same but has worse case of O(n^2))
-//  will call itself on the 2 halves recursively
+// node: Collections.sort uses merge sort, while Arrays.sort uses quick sort (the latter is also O(n log n) but has worse case of O(n^2))
+// using a Heap [tree] data structure is also O(n log n)
+
 // a and b and the starting and ending indexes
 fun IntArray.sort(a: Int, b: Int): IntArray {
     if (a < b) {

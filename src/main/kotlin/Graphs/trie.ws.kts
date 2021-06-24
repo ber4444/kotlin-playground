@@ -1,6 +1,7 @@
 package Graphs
 
 // Tries, or prefix trees, are n-ary trees used for storing the words for prefix lookups (kind of like a hashtable that can do partial matches)
+// Can check if a string is a valid prefix in O(k) time, where k is the length of the string
 class Trie {
     data class Node(var word: String? = null, val childNodes: MutableMap<Char, Node> = mutableMapOf())
 

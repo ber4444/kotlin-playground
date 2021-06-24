@@ -12,7 +12,6 @@ class Graph<T> {
     }
 }
 
-// it goes level by level
 // not recursive, just uses a queue and needs a "visited" flag so that we don’t backtrack and revisit nodes
 fun <T> bfs(graph: Graph<T>,
             startNode: T): String {
@@ -24,10 +23,10 @@ fun <T> bfs(graph: Graph<T>,
     }
 
     class Queue {
-        val deck: Deque<T> = ArrayDeque()
-        fun add(node: T) = deck.add(node)
-        fun isNotEmpty() = deck.isNotEmpty()
-        fun remove() = deck.remove()
+        val queue: Deque<T> = ArrayDeque()
+        fun add(node: T) = queue.add(node)
+        fun isNotEmpty() = queue.isNotEmpty()
+        fun remove() = queue.remove()
     }
     val queue = Queue()
     // Initial step -> add the startNode to the queue.
@@ -52,4 +51,7 @@ graph.addEdge('E', 'A')
 graph.addEdge('A', 'B')
 graph.addEdge('A', 'C')
 graph.addEdge('C', 'D')
+// start with an arbitrary node, and explore each neighbor ("breath first") before moving on to their children - moving level by level
+// BFS is typically better than DFS for path finding
+// for finding the shortest path, we can run 2 simultaneous BFS and the path is where they collide - it's called bidirectional search
 println(bfs(graph, 'E'))
