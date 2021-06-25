@@ -29,7 +29,6 @@ fun <T> bfs(graph: Graph<T>,
         fun remove() = queue.remove()
     }
     val queue = Queue()
-    // Initial step -> add the startNode to the queue.
     queue.add(startNode)
     // Traverse the graph
     while (queue.isNotEmpty()) {
@@ -53,5 +52,5 @@ graph.addEdge('A', 'C')
 graph.addEdge('C', 'D')
 // start with an arbitrary node, and explore each neighbor ("breath first") before moving on to their children - moving level by level
 // BFS is typically better than DFS for path finding
-// for finding the shortest path, we can run 2 simultaneous BFS and the path is where they collide - it's called bidirectional search
+// Dijkstra’s algorithm (which can be bidirectional as well) is used for finding shortest path
 println(bfs(graph, 'E'))

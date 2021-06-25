@@ -30,6 +30,26 @@ class Trie {
         }
         return currentNode.word == null
     }
+
+    fun prefixMatch(prefix: String): List<String> {
+        var current = root
+        for (char in prefix) {
+            val child = current.childNodes[char] ?: return emptyList()
+            current = child
+        }
+        return _collections(prefix, current)
+    }
+
+    private fun _collections(prefix: String, node: Node?): List<String> {
+        val results = mutableListOf<String>()
+        if (node?.word != null) {
+            results.add(prefix)
+        }
+        node?.childNodes?.forEach { (key, node) ->
+            results.addAll(_collections(prefix + key, node))
+        }
+        return results
+    }
 }
 
 val trie = Trie()
@@ -46,3 +66,4 @@ listOf(
 ).forEach { trie.insert(it) }
 println(trie.startsWith("he"))
 println(trie.startsWith("xyz"))
+println(trie.prefixMatch("he"))
