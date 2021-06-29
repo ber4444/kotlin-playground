@@ -9,6 +9,13 @@ data class Node<T>(val value: T,
     }
     // O(n) time - traverses all nodes, and O(n) space because of recursion
     fun height(node: Node<T>? = this): Int = node?.let { 1 + Math.max(height(node.leftNode), height(node.rightNode)) } ?: -1
+
+    fun isSymmetric(left: Node<T>? = this.leftNode, right: Node<T>? = this.rightNode): Boolean {
+        if (left == null && right == null) return true
+        return (left != null && right != null) &&
+                isSymmetric(left.leftNode, right.rightNode) &&
+                isSymmetric(left.rightNode, right.leftNode)
+    }
 }
 
 /*
@@ -17,8 +24,6 @@ data class Node<T>(val value: T,
  *     [B]    [C]
  *     / \    /  \
  *  [D]  [E] [F] [G]
- *               / \
- *             [H] [I]
  */
 val a = Node('a')
 val b = Node('b')
@@ -27,10 +32,8 @@ val d = Node('d')
 val e = Node('e')
 val f = Node('f')
 val g = Node('g')
-val h = Node('h')
-val i = Node('i')
 a.link(b, c)
 b.link(d, e)
 c.link(f, g)
-g.link(h, i)
 println(a.height().toString())
+println(a.isSymmetric())

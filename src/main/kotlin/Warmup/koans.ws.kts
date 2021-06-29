@@ -5,6 +5,9 @@ package Warmup
 import java.util.*
 
 @JvmField val _reader = System.`in`.bufferedReader()
+// or:  readLine()!!.toInt()
+// for list of ints: readLine()!!.split(" ").map { it.toInt() }
+// or reading unspecified amount of lines:     val lines2 = generateSequence(::readLine)
 @JvmField var _tokenizer: StringTokenizer = StringTokenizer("")
 
 fun readLines(n: Int) = List(n) { _reader.readLine()!! }
@@ -14,7 +17,7 @@ fun read(): String {
 }
 fun readInt() = read().toInt()
 fun readStrings(n: Int) = List(n) { read() }
-fun readInts(n: Int) = List(n) { read().toInt() }
+fun readInts(n: Int) = List(n) { read().toInt() } // java: new Scanner(System.in).nextInt() or nextLine()
 fun readIntArray(n: Int) = IntArray(n) { read().toInt() }
 
 data class Result(val result: Int, val status: String)
