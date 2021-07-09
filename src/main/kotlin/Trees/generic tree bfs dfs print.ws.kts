@@ -61,3 +61,27 @@ println("---")
 tree.printFormatted { println(it.value) }
 // search for particular node
 tree.bfs { if (it.value=="tea") println("found") }
+
+// read list into a tree:
+  val inputPairs = listOf(
+    8 to 7,
+    7 to 6,
+    6 to 4,
+    5 to 4,
+    4 to 3,
+    3 to 2,
+    2 to 1,
+    1 to null,
+    9 to null
+  )
+    val tree = Node(0) // using Int's for this sample but type is generic
+    for (i in inputPairs.size-1 downTo 0) {
+        val item = inputPairs.get(i)
+        if (item.second == null) tree.add(Node(item.first)) 
+        else tree.dfs { 
+            if (it.value == item.second) {
+                println("will add to this parent: ${item.first} to ${it.value}")
+                it.add(Node(item.first))
+            } 
+         }  
+    }
