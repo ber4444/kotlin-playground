@@ -80,7 +80,7 @@ tree.bfs { if (it.value=="tea") println("found") }
         if (item.second == null) tree.add(Node(item.first)) 
         else tree.dfs { 
             if (it.value == item.second) {
-                println("will add to this parent: ${item.first} to ${it.value}")
+                println("will add ${item.first} to parent ${it.value}")
                 it.add(Node(item.first))
             } 
          }  
